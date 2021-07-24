@@ -4,6 +4,8 @@ To use you need to download a chromedriver and selenium installed. It works on w
 
 This is to everyone who wants to read some turma da monikers jovem comics. I didn't host those files.
 
+The ```pdf2cbz``` function was heavily inspired on [Ishydo's](https://github.com/Ishydo/PDF2CBZ) implementation. 
+
 ### TODO:
 - [ ] GUI (?)
 - [ ] integration with KCC (don't know if its possible)
