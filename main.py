@@ -4,11 +4,16 @@ from selenium import webdriver
 import os
 
 from utils import file_renamer
+from utils import pdf2cbz
 
 if not os.path.isdir('./downloads'):
     os.mkdir('downloads')
 
-DOWNLOAD_FOLDER = os.getcwd() + '\\downloads\\'
+if not os.path.isdir("./cbz'ed_files"):
+    os.mkdir("cbz'ed_files")
+
+DOWNLOAD_FOLDER = os.getcwd() + '/downloads/'
+CBZ_FOLDER = os.getcwd() + "/cbz'ed_files/"
 
 # Set the options for the chromedriver
 chrome_options = webdriver.ChromeOptions()
@@ -33,5 +38,12 @@ TEXT = '''
 '''
 
 print(TEXT)
+
+## Download the files
 Moniker(driver_options=chrome_options).download_turma_da_monikers()
+
+# Rename the files
 file_renamer(DOWNLOAD_FOLDER)
+
+# Turn the pdf files into cbz
+pdf2cbz(DOWNLOAD_FOLDER, CBZ_FOLDER)
